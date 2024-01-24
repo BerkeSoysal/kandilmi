@@ -6,13 +6,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    min-height: 100vh; /* Ensure at least the height of the viewport */
     background-image: url("bg.jpg");
-    background-size:contain;
-    background-position:center;
     background-repeat: no-repeat;
-
+    background-size: cover;
 }
-
 
 .outer {
     display: table;
@@ -31,11 +29,21 @@ body {
 .inner {
     margin-left: auto;
     margin-right: auto;
-    width: 400px;
-    /* Whatever width you want */
+    max-width: 80%; /* Set a maximum width for better responsiveness */
 }
 
 #div {
     color: chartreuse;
-    font-size: 64px;
+    font-size: 4vw; /* Use viewport width for font size */
+}
+
+/* Media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .inner {
+        max-width: 90%; /* Adjust maximum width for smaller screens */
+    }
+
+    #div {
+        font-size: 8vw; /* Adjust font size for smaller screens */
+    }
 }
